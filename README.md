@@ -49,9 +49,11 @@ teachers-tutor/
 
 ## Setup and Installation
 
+### Local Development
+
 1. Clone the repository:
    ```bash
-   git clone [repository-url]
+   git clone https://github.com/dgmulei/teachers-tutor.git
    cd teachers-tutor
    ```
 
@@ -71,12 +73,41 @@ teachers-tutor/
    OPENAI_API_KEY=your_openai_api_key
    SUPABASE_URL=your_supabase_url
    SUPABASE_KEY=your_supabase_key
+   SUPABASE_DB_PASSWORD=your_supabase_db_password
+   APP_NAME="AI Teaching Assistant"
+   DEBUG=True
    ```
 
 5. Run the application:
    ```bash
    streamlit run app.py
    ```
+
+### Deploying to Streamlit Cloud
+
+1. Push your code to GitHub (already done if you're viewing this on GitHub)
+
+2. Create a Streamlit account at https://streamlit.io/ if you don't have one
+
+3. Create a new app in Streamlit Cloud:
+   - Connect to your GitHub repository
+   - Set the main file path to `app.py`
+   - Set the Python version to 3.9 or higher
+
+4. Set up the required secrets in the Streamlit Cloud dashboard:
+   - Go to your app settings
+   - Navigate to the "Secrets" section
+   - Add the following secrets (use the template in `.streamlit/secrets_template.toml`):
+     ```
+     OPENAI_API_KEY = "your-openai-api-key"
+     SUPABASE_URL = "your-supabase-url"
+     SUPABASE_KEY = "your-supabase-key"
+     SUPABASE_DB_PASSWORD = "your-supabase-db-password"
+     APP_NAME = "AI Teaching Assistant"
+     DEBUG = "False"
+     ```
+
+5. Deploy the app and access it via the provided URL
 
 ## Database Schema
 
